@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "App STG (debug)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_stg.dart",
+      "flutterMode": "debug",
+      "args": [
+        "--flavor",
+        "stg",
+        "--dart-define-from-file=env/stg.json"
+      ]
+    },
+    {
+      "name": "App STG (profile)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_stg.dart",
+      "flutterMode": "profile",
+      "args": [
+        "--flavor",
+        "stg",
+        "--dart-define-from-file=env/stg.json"
+      ]
+    },
+    {
+      "name": "App PROD (debug)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_prod.dart",
+      "flutterMode": "debug",
+      "args": [
+        "--flavor",
+        "prod",
+        "--dart-define-from-file=env/prod.json"
+      ]
+    },
+    {
+      "name": "App PROD (release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_prod.dart",
+      "flutterMode": "release",
+      "args": [
+        "--flavor",
+        "prod",
+        "--dart-define-from-file=env/prod.json"
+      ]
+    }
+  ]
+}

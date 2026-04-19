@@ -1,0 +1,20 @@
+import 'package:clean_riverpod_starter/core/storage/secure_storage_service.dart';
+import 'package:dio/dio.dart';
+
+class AuthInterceptor extends Interceptor {
+  AuthInterceptor(this._storage);
+
+  final SecureStorageService _storage;
+
+  @override
+  Future<void> onRequest(
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
+    final token = await _storage.readAccessToken();
+    if (token != null && token.isNotEmpty) {
+      options.headers['Authorization'] = 'Bearer $token';
+    }
+    handler.next(options);
+  }
+}

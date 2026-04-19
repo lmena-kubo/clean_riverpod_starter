@@ -1,0 +1,7 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # field_rename: snake  # Descomentá si tu backend usa snake_case en JSON
+          explicit_to_json: true
